@@ -1,0 +1,18 @@
+<div class="converter-form-wrapper">
+    <form action="<?php /** @var \Training\CurrencyConverter\Block\Form $block */
+    echo $block->getFormAction(); ?>" name="converter-form" method="POST">
+        <?php $this->getFormKey('formkey'); ?>
+        From <select name="from">
+        <?php foreach ($block->getFrom() as $currency) { ?>
+            <option value="<?php echo $currency; ?>"><?php echo $currency; ?></option>
+        <?php } ?>
+        </select>
+        To <select name="to">
+            <?php foreach ($block->getTo() as $currency) { ?>
+                <option value="<?php echo $currency; ?>"><?php echo $currency; ?></option>
+            <?php } ?>
+        </select>
+        Amount <input type="text" name="amount" />
+        <input type="submit">
+    </form>
+</div>
